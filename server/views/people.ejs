@@ -31,8 +31,9 @@
     
     <%  } else if(locals.person) { %>
     
-    <p><b>Вывод информации о человеке</b>:</p> <br>
-    <b>Имя: </b> <%= person.fullName.firstName %> <%= person.fullName.lastName %> <br>    
+    <p><b>Вывод информации о человеке</b>:</p>
+    <b>Имя: </b> <%= person.fullName.firstName %> <%= person.fullName.lastName %> <br>
+    <b>Дата рождения: </b> <%= person.birthDay.day %>.<%= person.birthDay.month %>.<%= person.birthDay.year %> <br>        
     
     <% } else { %>
     
