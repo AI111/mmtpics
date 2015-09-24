@@ -1,0 +1,44 @@
+<!-- public/views/index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title><%= title %></title>
+
+</head>
+<body>
+    <% if(locals.list) { %>
+
+    <p><b>Список людей!</b></p>
+    
+    <table>
+        <tr>
+            <th>№</th>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Дата рождения</th>
+        </tr>
+        <% list.forEach(function(item) { %>
+            <tr>
+                <td><%= item._id %></td>
+                <td><%= item.fullName.firstName %></td>
+                <td><%= item.fullName.lastName %></td>
+                <td><%= item.birthDay.day %>.<%= item.birthDay.month %>.<%= item.birthDay.year %></td>
+            </tr> 
+        <% }); %>
+    </table>
+    
+    <%  } else if(locals.person) { %>
+    
+    <p><b>Вывод информации о человеке</b>:</p> <br>
+    <b>Имя: </b> <%= person.fullName.firstName %> <%= person.fullName.lastName %> <br>    
+    
+    <% } else { %>
+    
+    <p>Здесь должна была бы вывестись информация о пользователях.</p>
+    
+    <% } %>
+
+</body>
+</html>

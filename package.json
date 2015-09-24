@@ -1,0 +1,10 @@
+﻿{
+	"name": "lection-3",
+	"main": "server.js",
+	"dependencies": {
+		"express" : "latest",
+		"mongoose" : "latest",
+		"body-parser" : "latest",
+ 		"ejs" : "latest"
+	}
+}
