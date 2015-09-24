@@ -1,0 +1,26 @@
+[
+	{	
+		"_id": 1,
+		"fullName" : {
+			"firstName" : "Nikita",
+			"lastName" : "Kovalenko"
+		},
+		"birthDay" : {
+			"day" : 4,
+			"month" : 12,
+			"year" : 1988
+		}
+	},
+	{	
+		"_id": 2,
+		"fullName" : {
+			"firstName" : "Nikolay",
+			"lastName" : "Godovichenko"
+		},
+		"birthDay" : {
+			"day" : 3,
+			"month" : 5,
+			"year" : 1985
+		}
+	}
+]
