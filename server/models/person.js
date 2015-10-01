@@ -1,7 +1,10 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/lect3');
+var config = require('../config/config');
+mongoose.connect(config.dbUrl);
 
-var personSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+
+var personSchema = new Schema({
 	_id : Number,
 	fullName : {
 		firstName : String,

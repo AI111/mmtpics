@@ -5,6 +5,13 @@
 		"express" : "latest",
 		"mongoose" : "latest",
 		"body-parser" : "latest",
- 		"ejs" : "latest"
+ 		"ejs" : "latest",
+		"method-override" : "latest", 		 
+		"Faker" : "latest",
+		"oauth2orize"  : "latest", 
+		"passport" : "latest",
+		"passport-http" : "latest",
+		"passport-http-bearer" : "latest",
+		"passport-oauth2-client-password" : "latest"
 	}
 }

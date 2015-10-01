@@ -12,7 +12,7 @@
 
     <p><b>Список людей!</b></p>
     
-    <table>
+    <table border=1>
         <tr>
             <th>№</th>
             <th>Имя</th>
@@ -24,7 +24,11 @@
                 <td><%= item._id %></td>
                 <td><%= item.fullName.firstName %></td>
                 <td><%= item.fullName.lastName %></td>
-                <td><%= item.birthDay.day %>.<%= item.birthDay.month %>.<%= item.birthDay.year %></td>
+                <td>
+                    <%= item.birthDay.day %>.
+                    <%= item.birthDay.month %>.
+                    <%= item.birthDay.year %>
+                </td>
             </tr> 
         <% }); %>
     </table>
@@ -32,8 +36,14 @@
     <%  } else if(locals.person) { %>
     
     <p><b>Вывод информации о человеке</b>:</p>
-    <b>Имя: </b> <%= person.fullName.firstName %> <%= person.fullName.lastName %> <br>
-    <b>Дата рождения: </b> <%= person.birthDay.day %>.<%= person.birthDay.month %>.<%= person.birthDay.year %> <br>        
+    <b>Имя: </b> 
+        <%= person.fullName.firstName %>
+        <%= person.fullName.lastName %> <br>
+    
+    <b>Дата рождения: </b> 
+        <%= person.birthDay.day %>.
+        <%= person.birthDay.month %>.
+        <%= person.birthDay.year %> <br>        
     
     <% } else { %>
     
