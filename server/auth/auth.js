@@ -14,6 +14,7 @@ passport.use(new BasicStrategy(
             if (err) { return done(err); }
             if (!client) { return done(null, false); }
             if (client.clientSecret != password) { return done(null, false); }
+            console.log("logged through BasicStrategy!");
 
             return done(null, client);
         });
@@ -27,6 +28,7 @@ passport.use(new ClientPasswordStrategy(
             if (!client) { return done(null, false); }
             if (client.clientSecret != clientSecret) { return done(null, false); }
 
+            console.log("logged through ClientPasswordStrategy!");
             return done(null, client);
         });
     }
@@ -50,6 +52,7 @@ passport.use(new BearerStrategy(
                 if (!user) { return done(null, false, { message: 'Unknown user' }); }
 
                 var info = { scope: '*' }
+                console.log("logged through BearerStrategy!");
                 done(null, user, info);
             });
         });

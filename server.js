@@ -3,11 +3,10 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var config = require('./server/config/config');
-var log = require('./server/log')(module);
 var methodOverride = require('method-override');
 
 var oauth2 = require('./server/auth/oauth2');
-             require('./server/auth/auth');
+require('./server/auth/auth');
              
 var passport = require('passport');              
 

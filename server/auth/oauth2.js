@@ -12,6 +12,7 @@ var server = oauth2orize.createServer();
 
 // обменяет username и password на токен доступа
 server.exchange(oauth2orize.exchange.password(function(client, username, password, scope, done) {
+    console.log("Giving token!");
     UserModel.findOne({ username: username }, function(err, user) {
         if (err) { return done(err); }
         if (!user) { return done(null, false); }
