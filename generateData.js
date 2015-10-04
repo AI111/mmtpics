@@ -1,5 +1,6 @@
 var config              = require('./server/config/config');
-var mongoose            = require('mongoose');
+//var mongoose            = require('mongoose');
+var mongoose = config.mongoose;
 var UserModel           = require('./server/models/oauth').UserModel;
 var ClientModel         = require('./server/models/oauth').ClientModel;
 var AccessTokenModel    = require('./server/models/oauth').AccessTokenModel;

@@ -1,8 +1,9 @@
 var crypto  = require('crypto');
-var mongoose = require('mongoose');
+//var mongoose = require('mongoose');
 var config = require('../config/config');
 
 //mongoose.connect(config.dbUrl);
+var mongoose = config.mongoose;
 
 var Schema = mongoose.Schema;
 
