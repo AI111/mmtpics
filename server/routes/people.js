@@ -12,7 +12,7 @@ module.exports = function (app) {
 	// обработка маршрута для http://localhost/people/id
 	// где id - идентификатор записи в БД.
 	// выводит запись из БД с идентификатором id
-	app.get('/people/:id', passport.authenticate('bearer', { session: false }),  peopleController.showPerson); 
+	app.get('/people/:id', peopleController.showPerson); 
 	
 	app.param('id', peopleController.getById);
 }

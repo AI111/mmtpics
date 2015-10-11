@@ -5,7 +5,7 @@
 		"express" : "latest",
 		"mongoose" : "latest",
 		"body-parser" : "latest",
- 		"ejs" : "latest",
+ 		"jade" : "latest",
 		"method-override" : "latest", 		 
 		"Faker" : "latest",
 		"oauth2orize"  : "latest", 

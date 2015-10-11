@@ -26,7 +26,7 @@ app.use(passport.initialize());
 
 app.post('/oauth/token', oauth2.token);
 
-app.set('view engine', 'ejs');
+app.set('view engine', 'jade');
 app.set('views', './server/views');
 
 require('./server/routes/index')(app);
