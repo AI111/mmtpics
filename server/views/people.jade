@@ -1,0 +1,32 @@
+doctype html
+html
+	head
+		title #{title}
+	body
+		if list 
+			p 
+				b Список людей!
+			table(border=1)
+				tr
+					th №
+					th Имя
+					th Фамилия
+					th Дата рождения
+				each item, i in list
+					tr
+						td #{item._id}
+						td #{item.fullName.firstName}
+						td #{item.fullName.lastName}
+						td #{item.birthDay.day}.#{item.birthDay.month}.#{item.birthDay.year}					
+		else if person
+			p
+				b Вывод информации о человеке:
+			p
+				b Имя: 
+				| #{person.fullName.firstName} #{person.fullName.lastName}
+			p
+				b Дата рождения: 
+				| #{person.birthDay.day}.#{person.birthDay.month}.#{person.birthDay.year}
+		else
+			p Здесь должна была бы вывестись информация о пользователях.
+		
