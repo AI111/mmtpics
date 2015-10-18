@@ -12,6 +12,7 @@
 		"passport" : "latest",
 		"passport-http" : "latest",
 		"passport-http-bearer" : "latest",
-		"passport-oauth2-client-password" : "latest"
+		"passport-oauth2-client-password" : "latest",
+		"morgan":"latest"
 	}
 }

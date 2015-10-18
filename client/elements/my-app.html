@@ -1,0 +1,74 @@
+<link rel="import"  href="../bower_components/polymer/polymer.html">
+<link rel="import"  href="../bower_components/paper-input/paper-input.html">
+<link rel="import"  href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="my-app">
+    <style>
+        .horizontal-layout{
+            @apply(--layout-vertical);
+            width: 20%;
+        }
+    </style>
+<template>
+    <div class="horizontal-layout">
+        <paper-input id="login" label="login" value="nikita"></paper-input>
+        <paper-input id="password" type="password" label="password" value="123456"></paper-input>
+        <paper-button on-click="handleClick">sign in</paper-button>
+    </div>
+    <div> Employee list: </div>
+    <template is="dom-repeat" items="{{employees}}">
+        <div># <span>{{index}}</span></div>
+        <div>First name: <span>{{item.name.firstName}}</span></div>
+        <div>Last name: <span>{{item.name.lastName}}</span></div>
+    </template>
+
+</template>
+<script>
+    Polymer({
+        is: "my-app",
+        accsess_token:'',
+        employees:[],
+        ready: function() {
+            //this.textContent = "I'm a proto-element. Check out my prototype!"
+        },
+        handleClick: function(e) {
+           // this.fire('kick', {kicked: true});
+            console.log(e);
+            console.log(this.$.login.value);
+            console.log(this.$.password.value)
+            this.sendRequestAT(this.$.login.value,this.$.password.value);
+        },
+        getData: function(token){
+            var http = new XMLHttpRequest();
+            http.open('GET', 'api/people', true);
+            // http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            http.setRequestHeader("Authorization","Bearer "+token);
+            //     http.setRequestHeader("Content-length", params.length);
+            http.onload = function () {
+                // do something to response
+                arr=JSON.parse(http.response)
+                console.log(arr);
+                this.employees=arr;
+            }.bind(this);
+            http.send();
+        },
+        sendRequestAT: function(login,password){
+            params="username="+login+"&password="+password+"&grant_type=password&client_id=xonxtPC1&client_secret=abc123456"
+            var http = new XMLHttpRequest();
+            http.open('POST', 'oauth/token', true);
+            http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+       //     http.setRequestHeader("Content-length", params.length);
+
+            http.onload = function () {
+                // do something to response
+                console.log(http.responseText);
+                this.accsess_token=JSON.parse(http.response).access_token;
+                this.getData(this.accsess_token);
+            }.bind(this);
+            http.send(params);
+        }
+
+
+    });
+</script>
+</dom-module>
